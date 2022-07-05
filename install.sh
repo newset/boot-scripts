@@ -1,14 +1,14 @@
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#! /bin/bash
 
-
+### install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-sudo spctl --master-disable
+### install zsh on-my-zsh
+brew install zsh git-hub tmux unar python3
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-
-brew
-brew update
-brew install tmux
+### clone .shell
+gh-get newset/.shell
 
 # diskutil apfs updatePreboot disk1s1
 
@@ -18,16 +18,15 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
 brew install vim --with-lua --with-override-system-vi
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-
 # font
 
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 
-brew install node
+brew install node docker golang
+
+### install vscode
+brew cask install visual-studio-code
 
 npm config set registry http://r.cnpmjs.org --global
 npm config set disturl https://npm.taobao.org/mirrors/node --global
@@ -38,11 +37,11 @@ yarn config set disturl https://npm.taobao.org/mirrors/node --global
 
 
 # ruby gem
-
 gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 
-# cocoapods
+# install cocoapods
+sudo gem install cocoapods
+
 cd ~/.cocoapods/repos 
 pod repo remove master
-pod repo add master https://git.coding.net/jasper/CocoaPods.git
 git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master
