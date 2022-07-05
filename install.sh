@@ -16,8 +16,10 @@ done
 brew update
 
 ### install zsh on-my-zsh
-brew install zsh git-hub tmux unar python3
+
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+brew install tmux unar python3 nodejs
 
 ### clone .shell
 gh-get newset/.shell
@@ -25,20 +27,15 @@ gh-get newset/.shell
 # diskutil apfs updatePreboot disk1s1
 
 sudo find /Users/Doctorwork -name ".DS_Store" -depth -exec rm {} \; 
-
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true 
 
-brew install vim --with-lua --with-override-system-vi
+# or use curl
+# cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 
-# font
-
-brew tap caskroom/fonts
-brew cask install font-hack-nerd-font
-
-brew install node docker golang
+brew install docker golang rust
 
 ### install vscode
-brew cask install visual-studio-code
+brew install --cask visual-studio-code
 
 npm config set registry http://r.cnpmjs.org --global
 npm config set disturl https://npm.taobao.org/mirrors/node --global
@@ -49,7 +46,8 @@ yarn config set disturl https://npm.taobao.org/mirrors/node --global
 
 
 # ruby gem
-gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
+bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
 
 # install cocoapods
 sudo gem install cocoapods
