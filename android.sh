@@ -5,6 +5,8 @@ brew install --cask android-studio
 sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 echo 'export ANDROID_HOME=$HOME/Library/Android/sdk' >> ~/.zprofile
+echo 'export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home' >> ~/.zprofile 
+
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
 # install
