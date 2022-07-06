@@ -19,7 +19,12 @@ brew update
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-brew install tmux unar python3 nodejs
+brew install tmux unar python3
+
+# install nvm and node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+nvm install 16
+nvm use 16
 
 ### clone .shell
 gh-get newset/.shell
@@ -55,3 +60,5 @@ sudo gem install cocoapods
 cd ~/.cocoapods/repos 
 pod repo remove master
 git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master
+
+
