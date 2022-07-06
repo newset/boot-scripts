@@ -22,4 +22,9 @@ rm cmdline-tools.zip
 
 # install ndk
 yes | ${sdk}/cmdline-tools/latest/bin/sdkmanager --licenses
+
+sdkmanager=${sdk}/cmdline-tools/latest/bin/sdkmanager
+
+sdkmanager --install "ndk;21.3.6528147"
+sdkmanager --install "cmake;10.24988404"
    
