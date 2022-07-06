@@ -12,12 +12,14 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 # install
 curl https://dl.google.com/android/repository/commandlinetools-mac-8512546_latest.zip  >> $ANDROID_HOME/cmdline-tools.zip
 cd $ANDROID_HOME
-unzip cmdline-tools.zip -d .
+mkdir -p ./cmdline-tools/
+unzip cmdline-tools.zip -d ./cmdline-tools/
+mv cmdline-tools/cmdline-tools/ cmdline-tools/latest
 rm cmdline-tools.zip
 
 # proxy
 # mirrors.neusoft.edu.cn:80
 
 # install ndk
-yes | ${sdk}/cmdline-tools/bin/sdkmanager --licenses
+yes | ${sdk}/cmdline-tools/latest/bin/sdkmanager --licenses
    
