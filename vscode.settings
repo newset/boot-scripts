@@ -1,3 +1,8 @@
+- '[javascript][javascriptreact]' key 不能生效
+- 关闭部分文件的prettier格式化功能
+
+```
+
 { 
     "eslint.format.enable": true,
     "editor.formatOnSave": true,
@@ -15,5 +20,10 @@
     },
     "[typescriptreact]": {
       "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     }
 }
+
+```
