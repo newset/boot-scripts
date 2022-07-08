@@ -37,7 +37,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 # or use curl
 # cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 
-brew install docker golang rust docker-compose
+brew install --cask --appdir=/Applications docker
+brew install golang rust docker-compose
 
 ### install vscode
 brew install --cask visual-studio-code
