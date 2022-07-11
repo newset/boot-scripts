@@ -38,7 +38,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 # cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 
 brew install --cask --appdir=/Applications docker
-brew install golang rust docker-compose
+brew install golang docker-compose
 
 ### install vscode
 brew install --cask visual-studio-code
@@ -63,3 +63,5 @@ pod repo remove master
 git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master
 
 
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
