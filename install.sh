@@ -86,3 +86,10 @@ echo "set flutter envs"
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
+echo "install jetbrains mono"
+
+curl -L https://download.jetbrains.com/fonts/JetBrainsMono-2.242.zip | bsdtar -xvf-
+cp fonts/ttf/* /Library/Fonts
+
+
+
