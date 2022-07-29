@@ -27,7 +27,7 @@ nvm install 16
 nvm use 16
 
 ### clone .shell
-gh-get newset/.shell
+git clone  https://github.com/newset/.shell ~/.shell
 
 # diskutil apfs updatePreboot disk1s1
 
@@ -37,11 +37,16 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 # or use curl
 # cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 
+echo "install docker golang docker-compose"
 brew install --cask --appdir=/Applications docker
 brew install golang docker-compose
 
 ### install vscode
+echo "install vscode"
 brew install --cask visual-studio-code
+
+echo "install raycast"
+brew install --cask raycast
 
 npm config set registry http://r.cnpmjs.org --global
 npm config set disturl https://npm.taobao.org/mirrors/node --global
@@ -65,9 +70,14 @@ cd ~/.cocoapods/repos
 pod repo remove master
 git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master
 
-
 # rust
 echo "安装rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+echo "downloading flutter sdk from mirror flutter-io.cn"
+# curl - https://storage.flutter-io.cn/flutter_infra_release/releases/stable/macos/flutter_macos_3.0.5-stable.zip | 
+
+echo "set flutter envs"
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
