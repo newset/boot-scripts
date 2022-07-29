@@ -22,5 +22,5 @@ curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master/env/.cur
 echo "Host github.com
   HostName github.com
   User git
-  ProxyCommand nc -v -x 127.0.0.1:1086 %h %p" >> $HOME/.ssh/config
+  ProxyCommand nc -v -x 127.0.0.1:1080 %h %p" >> $HOME/.ssh/config
 ```
