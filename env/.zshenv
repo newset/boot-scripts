@@ -1,7 +1,7 @@
 . "$HOME/.cargo/env"
 
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:$HOME/flutter/bin
 
 # ndk path
 
