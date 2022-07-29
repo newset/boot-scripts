@@ -55,13 +55,19 @@ yarn config set disturl https://npm.taobao.org/mirrors/node --global
 gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
 bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
 
+echo "安装cocoapods gem"
+
 # install cocoapods
 sudo gem install cocoapods
 
+echo "初始化 cocoapods 仓库"
 cd ~/.cocoapods/repos 
 pod repo remove master
 git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master
 
 
 # rust
+echo "安装rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+
