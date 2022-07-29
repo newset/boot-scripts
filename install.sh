@@ -37,16 +37,16 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 # or use curl
 # cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 
-echo "install docker golang docker-compose"
+echo "install docker golang docker-compose iterm2"
 brew install --cask --appdir=/Applications docker
-brew install golang docker-compose
+brew install golang docker-compose iterm2
 
 ### install vscode
 echo "install vscode"
 brew install --cask visual-studio-code
 
 echo "install raycast"
-brew install --cask raycast
+brew install --cask raycast 
 
 npm config set registry http://r.cnpmjs.org --global
 npm config set disturl https://npm.taobao.org/mirrors/node --global
@@ -66,6 +66,11 @@ echo "安装cocoapods gem"
 sudo gem install cocoapods
 
 echo "初始化 cocoapods 仓库"
+if [ ! -d "$DIR" ]; then
+  echo "create repos folder."
+  mkdir -p ~/.cocoapods/repos
+fi
+
 cd ~/.cocoapods/repos 
 pod repo remove master
 git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master
