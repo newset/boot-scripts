@@ -16,3 +16,11 @@ curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master/env/.zsh
 ```
 curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master/env/.curlrc > $HOME/.curlrc
 ```
+
+添加`.ssh/config`github配置
+```
+echo "Host github.com
+  HostName github.com
+  User git
+  ProxyCommand nc -v -x 127.0.0.1:1086 %h %p" >> $HOME/.ssh/config
+```
