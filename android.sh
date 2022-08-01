@@ -26,5 +26,5 @@ yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses
 alias sdkmanager=${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager
 
 sdkmanager --install "ndk;21.3.6528147"
-sdkmanager --install "cmake;10.24988404"
+sdkmanager --install "cmake;3.18.1"
    
