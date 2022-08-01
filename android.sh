@@ -23,7 +23,7 @@ rm cmdline-tools.zip
 # install ndk
 yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --licenses
 
-sdkmanager=${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager
+alias sdkmanager=${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager
 
 sdkmanager --install "ndk;21.3.6528147"
 sdkmanager --install "cmake;10.24988404"
