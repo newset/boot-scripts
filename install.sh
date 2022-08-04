@@ -80,7 +80,10 @@ echo "安装rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 echo "downloading flutter sdk from mirror flutter-io.cn"
+# intel chip
 # curl - https://storage.flutter-io.cn/flutter_infra_release/releases/stable/macos/flutter_macos_3.0.5-stable.zip | 
+# arm chip
+# curl - https://storage.flutter-io.cn/flutter_infra_release/releases/stable/macos/flutter_macos_arm64_3.0.5-stable.zip | 
 
 echo "set flutter envs"
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
