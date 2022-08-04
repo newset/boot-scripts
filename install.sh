@@ -79,11 +79,16 @@ git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master
 echo "安装rust"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+cd $HOME
 echo "downloading flutter sdk from mirror flutter-io.cn"
-# intel chip
-# curl - https://storage.flutter-io.cn/flutter_infra_release/releases/stable/macos/flutter_macos_3.0.5-stable.zip | 
-# arm chip
-# curl - https://storage.flutter-io.cn/flutter_infra_release/releases/stable/macos/flutter_macos_arm64_3.0.5-stable.zip | 
+if [ `arch` == 'i386' ]
+then
+    echo "get intel chip flutter"
+    curl https://storage.flutter-io.cn/flutter_infra_release/releases/stable/macos/flutter_macos_3.0.5-stable.zip > flutter.zip
+else
+    echo "get arm chip flutter"
+    curl https://storage.flutter-io.cn/flutter_infra_release/releases/stable/macos/flutter_macos_arm64_3.0.5-stable.zip > flutter.zip
+fi
 
 echo "set flutter envs"
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
