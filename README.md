@@ -22,13 +22,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master
 curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master/env/.zshenv > $HOME/.zshenv
 ```
 
--添加`.curlrc`文件
+- 添加`.curlrc`文件
 
 ```
 curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master/env/.curlrc > $HOME/.curlrc
 ```
 
--添加`.ssh/config`github配置
+- 添加`.ssh/config`github配置
 
 ```
 echo "Host github.com
