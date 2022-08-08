@@ -7,7 +7,6 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bot
 ### install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-
 # 自动设置
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 for tap in core cask{,-fonts,-drivers,-versions} command-not-found; do
@@ -19,13 +18,6 @@ brew update
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-brew install tmux unar python3
-
-# install nvm and node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-nvm install 16
-nvm use 16
-
 ### clone .shell
 git clone  https://github.com/newset/.shell ~/.shell
 
@@ -33,28 +25,6 @@ git clone  https://github.com/newset/.shell ~/.shell
 
 sudo find /Users/Doctorwork -name ".DS_Store" -depth -exec rm {} \; 
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true 
-
-# or use curl
-# cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
-
-echo "install docker golang docker-compose iterm2"
-brew install --cask --appdir=/Applications docker
-brew install golang docker-compose iterm2
-
-### install vscode
-echo "install vscode"
-brew install --cask visual-studio-code
-
-echo "install raycast"
-brew install --cask raycast 
-
-npm config set registry http://r.cnpmjs.org --global
-npm config set disturl https://npm.taobao.org/mirrors/node --global
-
-npm i yarn -g
-yarn config set registry http://r.cnpmjs.org --global
-yarn config set disturl https://npm.taobao.org/mirrors/node --global
-
 
 # ruby gem
 gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
