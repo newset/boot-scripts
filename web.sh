@@ -10,4 +10,3 @@ npm config set disturl https://npm.taobao.org/mirrors/node --global
 npm i yarn -g
 yarn config set registry http://r.cnpmjs.org --global
 yarn config set disturl https://npm.taobao.org/mirrors/node --global
-
