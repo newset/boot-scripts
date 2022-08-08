@@ -1,6 +1,20 @@
 # boot-scripts
 scripts for new environment
 
+## Homebrew 源
+
+- 清华
+```
+export MIRROR=https://mirrors.tuna.tsinghua.edu.cn
+export MIRROR_GIT=https://mirrors.tuna.tsinghua.edu.cn/git
+```
+
+- 腾讯
+```
+export MIRROR=https://mirrors.cloud.tencent.com
+export MIRROR_GIT=https://mirrors.cloud.tencent.com
+```
+
 ### 安装软件和shell配置
 
 ```
@@ -11,6 +25,24 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master
 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master/flutter.sh)"
+```
+
+### 安装 App
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master/app.sh)"
+```
+
+### 安装前端开发工具
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master/web.sh)"
+```
+
+### 安装Android开发工具
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master/android.sh)"
 ```
 
 
