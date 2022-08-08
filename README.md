@@ -45,6 +45,19 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/newset/boot-scripts/master/android.sh)"
 ```
 
+## 配置
+
+### NPM源设置
+
+```
+npm config set registry http://r.cnpmjs.org --global
+npm config set disturl https://npm.taobao.org/mirrors/node --global
+
+npm i yarn -g
+yarn config set registry http://r.cnpmjs.org --global
+yarn config set disturl https://npm.taobao.org/mirrors/node --global
+```
+
 
 ### 添加配置文件
 
@@ -68,3 +81,4 @@ echo "Host github.com
   User git
   ProxyCommand nc -v -x 127.0.0.1:1080 %h %p" >> $HOME/.ssh/config
 ```
+
