@@ -12,3 +12,6 @@ brew install --cask visual-studio-code
 
 echo "install raycast"
 brew install --cask raycast 
+
+echo "fig"
+brew install --cask fig
