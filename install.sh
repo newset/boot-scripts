@@ -1,34 +1,32 @@
 #! /bin/bash
 
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+MIRROR="${MIRROR:=https://mirrors.tuna.tsinghua.edu.cn}"
+MIRROR_GIT="${MIRROR_GIT:=https://mirrors.tuna.tsinghua.edu.cn/git}"
+
+export HOMEBREW_BREW_GIT_REMOTE="$MIRROR_GIT/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="$MIRROR_GIT/homebrew/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="$MIRROR/homebrew-bottles"
 
 ### install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://phproxy.com/raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # 自动设置
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-for tap in core cask{,-fonts,-drivers,-versions} command-not-found; do
-    brew tap --custom-remote --force-auto-update "homebrew/${tap}" "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-${tap}.git"
-done
+export HOMEBREW_CORE_GIT_REMOTE="$MIRROR_GIT/homebrew/homebrew-core.git"
 brew update
 
 ### install zsh on-my-zsh
-
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ### clone .shell
-git clone  https://github.com/newset/.shell ~/.shell
+git clone https://github.com/newset/.shell ~/.shell
 
-# diskutil apfs updatePreboot disk1s1
-
-sudo find /Users/Doctorwork -name ".DS_Store" -depth -exec rm {} \; 
+# sudo find /Users/Doctorwork -name ".DS_Store" -depth -exec rm {} \; 
+echo "disable DS_Store file"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true 
 
 # ruby gem
-gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
-bundle config mirror.https://rubygems.org https://mirrors.tuna.tsinghua.edu.cn/rubygems
+gem sources --add $MIRROR/rubygems/ --remove https://rubygems.org/
+bundle config mirror.https://rubygems.org $MIRROR/rubygems
 
 echo "安装cocoapods gem"
 
@@ -43,7 +41,7 @@ fi
 
 cd ~/.cocoapods/repos 
 pod repo remove master
-git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master
+git clone $MIRROR_GIT/CocoaPods/Specs.git master
 
 # rust
 echo "安装rust"
@@ -53,6 +51,3 @@ echo "install jetbrains mono"
 
 curl -L https://download.jetbrains.com/fonts/JetBrainsMono-2.242.zip | bsdtar -xvf-
 cp fonts/ttf/* /Library/Fonts
-
-
-
