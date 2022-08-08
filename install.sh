@@ -8,7 +8,7 @@ export HOMEBREW_CORE_GIT_REMOTE="$MIRROR_GIT/homebrew/homebrew-core.git"
 export HOMEBREW_BOTTLE_DOMAIN="$MIRROR/homebrew-bottles"
 
 ### install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://phproxy.com/raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://ghproxy.com/raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # 自动设置
 export HOMEBREW_CORE_GIT_REMOTE="$MIRROR_GIT/homebrew/homebrew-core.git"
