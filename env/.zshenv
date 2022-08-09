@@ -2,7 +2,7 @@
 
 # git lang
 # zh_CN.UTF-8 
-export LANG=en_US
+export LANG=en_US.UTF-8
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$HOME/flutter/bin
 
