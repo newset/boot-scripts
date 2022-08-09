@@ -1,5 +1,6 @@
 # boot-scripts
-scripts for new environment
+
+[git](doc/git.md)
 
 ## Homebrew 源
 
