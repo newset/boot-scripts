@@ -24,6 +24,9 @@ git clone https://github.com/newset/.shell ~/.shell
 echo "disable DS_Store file"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true 
 
+# echo "install rvm"
+# curl -sSL https://get.rvm.io | bash -s stable
+
 # ruby gem
 gem sources --add $MIRROR/rubygems/ --remove https://rubygems.org/
 bundle config mirror.https://rubygems.org $MIRROR/rubygems
@@ -31,7 +34,8 @@ bundle config mirror.https://rubygems.org $MIRROR/rubygems
 echo "安装cocoapods gem"
 
 # install cocoapods
-sudo gem install cocoapods
+brew install libffi cocoapods
+# sudo gem install -n /usr/local/bin cocoapods -v 1.8.4
 
 echo "初始化 cocoapods 仓库"
 if [ ! -d "$DIR" ]; then
