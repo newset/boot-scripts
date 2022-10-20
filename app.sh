@@ -1,6 +1,6 @@
 #! /bin/bash
 
-brew install tmux unar python3
+brew install tmux unar python3 fd
 
 echo "install docker golang docker-compose iterm2"
 brew install --cask --appdir=/Applications docker
