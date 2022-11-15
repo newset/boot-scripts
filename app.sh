@@ -2,16 +2,16 @@
 
 brew install tmux unar python3 fd
 
-echo "install docker golang docker-compose iterm2"
+echo "install docker golang docker-compose"
 brew install --cask --appdir=/Applications docker
-brew install golang docker-compose iterm2
+brew install golang docker-compose 
 
 ### install vscode
 echo "install vscode"
 brew install --cask visual-studio-code
 
-echo "install raycast"
-brew install --cask raycast 
+echo "install raycast warp: terminal"
+brew install --cask raycast warp
 
 echo "install dust: disk usage"
 brew install dust
