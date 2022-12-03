@@ -15,3 +15,6 @@ brew install --cask raycast warp
 
 echo "install dust: disk usage"
 brew install dust 
+
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
